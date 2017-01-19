@@ -1,0 +1,47 @@
+<div class="hero-unit">
+
+<h1>Zamowienia</h1>
+
+
+<div style="test-align:center;">
+<%= link_to("Dodaj nowe zamowienie", {:action => 'nowy'}, :class => 'btn btn-mini btn-primary ')%>
+</div>
+
+<p style="text-align: right;"> Ilosc zamowien: <%= @zamowienie.size %></p>
+<br>
+
+<table class="table table-striped">
+	<tr class="info">
+		<th>Nazwa</th>
+		<th>Cena</th>
+		<th>Wartosc</th>
+		<th>Czy wyslane</th>
+		<th>Opis</th>
+		<th>Data zamowienia</th>
+		<th>Data aktualizacji</th>
+
+		</tr>
+
+<% @zamowienie.each do |zamow| %>
+
+
+	<tr>
+		<td><%= zamow.klient_id %> </td>
+		<td><%= zamow.status %> </td>
+		<td><%= zamow.wartosc %> </td>
+		<td><%= zamow.wyslaneczynie ? 'Tak' : 'Nie' %> </td>
+		<td class= "center"><%= zamow.zawartosc %> </td>
+		<td><%= zamow.created_at %> </td>
+		<td><%= zamow.updated_at %> </td>
+		
+
+		<td class="actions">
+
+<%= link_to("Pokaz", {:action => 'pokaz', :id => zamow.id}, :class => 'btn btn-xs btn-default') %>
+<%= link_to("Edycja", {:action => 'edycja', :id => zamow.id}, :class => 'btn btn-xs btn-primary') %>
+<%= link_to("Usun", {:action => 'usun', :id => zamow.id}, :class => 'btn btn-xs btn-danger') %>
+
+</th>
+</tr>
+	<% end %>
+	</table>

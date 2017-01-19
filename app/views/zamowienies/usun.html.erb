@@ -1,0 +1,18 @@
+<div class="hero-unit">
+
+
+<%= form_for(:zamowienie, :url => {:action => 'kasuj', :id => @zamowienie.id}) do |pole|%>
+
+<p style="text-align: center;"> Czy na pewno usunąć zamówienie? </p>
+
+<p style="text-align: center;"><%= @zamowienie.zawartosc %></p>
+
+
+<div style="test-align:center;">
+<h1>Usuniecie zamowienia</h1>
+<%= link_to("Wracaj", {:action => 'index'}, :class => 'btn btn-mini btn-warning ')%>
+<%= submit_tag("Usun", :class => 'btn btn-mini btn-danger ')%>
+</div>
+
+
+	<% end %>

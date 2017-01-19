@@ -1,0 +1,50 @@
+<div class="hero-unit">
+
+<h1>Pokaz zamowienia</h1>
+
+
+<table  class="table table-striped">
+
+<tr>
+	<th>ID klienta</th>
+	<td><%= @zamowienie.klient_id %></td>
+		</tr>
+		<tr>
+
+		<th>Status</th>
+		<td><%= @zamowienie.status %></td>
+		</tr>
+		<tr>
+
+		<th>Wartosc zamowienia</th>
+		<td><%= @zamowienie.wartosc %></td>
+		</tr>
+
+		<tr>
+		<th>Czy zamowienie zostalo wyslane?</th>
+		<td><%= @zamowienie.wyslaneczynie ? 'Tak' : 'Nie' %></td>
+		</tr>
+
+		<tr>
+
+		<th>Utworzona</th>
+		<td><%= @zamowienie.created_at %> </td>
+
+		<th>Aktualizacja</th>
+		<td><%= @zamowienie.updated_at %> </td>
+
+		</tr>
+		
+
+	<td></td>
+
+	</table>
+
+<div style="test-align:center;">
+<%= link_to("Wracaj", {:action => 'index'}, :class => 'btn btn-mini btn-warning')%>
+</div>
+
+<%= form_for(:zamowienie, :url => {:action => 'pokaz'}) do |pole|%>
+<table class="table table-striped">
+
+	<% end %>

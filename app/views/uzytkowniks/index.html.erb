@@ -1,0 +1,31 @@
+<h1>Uzytkowniks#index</h1>
+
+<p></p>
+<%= link_to("Dodaj nowego uzytkownika", {:action => 'nowy'})%>
+
+<p>Ilosc uzytkownikow: <%= @uzytkownik.size %></p>
+
+<table>
+	<tr>
+<th>Pozycja</th>
+<th>Nazwa uzytkownika</th>
+<th>Email</th>
+<th>Telefon</th>
+<th>Akcje</th>
+
+	</tr>
+
+<% @uzytkownik.each do |uzytkownik| %>
+
+<tr>
+<th><%= uzytkownik.imie %></th>
+<th><%= uzytkownik.nazwisko %></th>
+<th><%= uzytkownik.email %></th>
+<th><%= uzytkownik.telefon %></th>
+<th><%= link_to("Pokaz", "#")%>
+<%= link_to("Edycja", "#")%>
+<%= link_to("Usun", "#")%></th>
+</tr>
+<% end %> 
+
+</table>

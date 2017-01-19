@@ -1,0 +1,46 @@
+<div class="hero-unit">
+
+<h1>Nowe zamowienie</h1>
+
+
+
+<%= form_for(:zamowienie, :url => {:action => 'utworz'}) do |pole|%>
+
+<table class="table table-striped">
+<tr>
+	<th><%= pole.label(:klient_id) %></th>
+	<td><%= pole.text_field(:klient_id, :class => 'form-control') %></td>
+		</tr>
+		<tr>
+
+		<th><%= pole.label(:status) %></th>
+		<td><%= pole.text_field(:status, :class => 'form-control') %></td>
+		</tr>
+		<tr>
+
+		<th><%= pole.label(:wartosc) %></th>
+		<td><%= pole.text_field(:wartosc, :class => 'form-control') %></td>
+		</tr>
+
+		<tr>
+		<th><%= pole.label(:wyslaneczyniem, "Czy zamowienie zostalo wyslane?") %></th>
+		<td><%= pole.check_box(:wyslaneczynie, :class => 'form-control') %></td>
+		</tr>
+
+		<tr>
+
+		<th><%= pole.label(:zawartosc) %></th>
+		<td><%= pole.text_field(:zawartosc, :class => 'form-control') %> </td>
+		</tr>
+		
+
+	<td></td>
+
+	</table>
+
+<div style="test-align:center;">
+<%= link_to("Wracaj", {:action => 'index'}, :class => 'btn btn-mini btn-warning')%>
+	<%= submit_tag("Utworz", :class => 'btn btn-mini btn-primary ')%>
+	
+</div>
+	<% end %>

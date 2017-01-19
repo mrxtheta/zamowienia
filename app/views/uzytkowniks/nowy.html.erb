@@ -1,0 +1,25 @@
+<h1>Nowy Uzytkownik/h1>
+
+
+<p></p>
+<%= link_to("Wracaj", {:action => 'index'})%>
+<%= form_for(:uzytkownik, :url => {:action => 'utworz'}) do |pole|%>
+
+<table>
+	<tr>
+		<th><%= pole.label(:imie) %>)</th>
+		<th><%= pole.text_field(:imie) %>)</th>
+		<th><%= pole.label(:nazwisko) %>)</th>
+		<th><%= pole.text_field(:nazwisko) %>)</th>
+		<th><%= pole.label(:uzytkownik) %>)</th>
+		<th><%= pole.text_field(:uzytkownik) %>)</th>
+		<th><%= pole.label(:email) %>)</th>
+		<th><%= pole.text_field(:email) %>)</th>
+		<th><%= pole.label(:telefon) %>)</th>
+		<th><%= pole.text_field(:telefon) %>)</th>
+		<th><%= pole.label(:) %>)</th>
+		<th><%= pole.text_field(:imie) %>)</th>
+		
+
+
+<%end%>	
